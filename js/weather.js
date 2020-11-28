@@ -5,7 +5,7 @@ function gettingJSON(){
     //Set default location if one isn't provided - Ann Arbor
     let loc;
     if (document.querySelector("#location").value == ''){
-        loc = "Ann+Arbor";
+        loc = "Ann Arbor";
     }
     else{
         loc = document.querySelector("#location").value;
@@ -32,7 +32,6 @@ function gettingJSON(){
     let query;
     
     if (Number.isInteger(parseInt(loc))){
-        console.log("Testing this is a number");
         query = "https://api.openweathermap.org/data/2.5/weather?zip=" + loc + "&APPID=" + key + "&units=" + format;
     }
     else{
