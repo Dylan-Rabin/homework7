@@ -3,15 +3,15 @@ function gettingJSON(){
     // Your code here.
     
     //Set default location if one isn't provided - Ann Arbor
-    let location;
+    let loc;
     if (document.querySelector("#location").value == ''){
-        location = "Ann+Arbor";
+        loc = "Ann+Arbor";
     }
     else{
-        location = document.querySelector("#location").value;
+        loc = document.querySelector("#location").value;
     }
     
-    console.log("Location is : " + location);
+    console.log("Location is : " + loc);
 
     //set default temperature format if one isn't provided
     // format is F if not clicked or F, other it's C
@@ -31,18 +31,18 @@ function gettingJSON(){
     //set the query  
     let query;
     
-    if (Number.isInteger(parseInt(location))){
+    if (Number.isInteger(parseInt(loc))){
         console.log("Testing this is a number");
-        query = "https://api.openweathermap.org/data/2.5/weather?zip=" + location + "&APPID=" + key + "&units=" + format;
+        query = "https://api.openweathermap.org/data/2.5/weather?zip=" + loc + "&APPID=" + key + "&units=" + format;
     }
     else{
-        query = "https://api.openweathermap.org/data/2.5/weather?q=" + location + "&APPID=" + key + "&units=" + format;
+        query = "https://api.openweathermap.org/data/2.5/weather?q=" + loc + "&APPID=" + key + "&units=" + format;
     }
     
     console.log("Query is :" + query);
     //Create and set variables for each of the elements you
     //need to update, location, temp, the image, etc.
-    let location = document.querySelector("#location");
+    let location = document.querySelector("#loc");
     let temp = document.querySelector("#temp");
     let tempImg = document.querySelector("#tempImg");
    
